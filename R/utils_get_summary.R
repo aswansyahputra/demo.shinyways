@@ -1,3 +1,10 @@
+#' get_summary 
+#'
+#' @description A utils function
+#'
+#' @return The return value, if any, from executing the utility.
+#'
+#' @noRd
 #' @importFrom dplyr group_by summarise n across
 get_summary <- function(.data) {
   res <- 

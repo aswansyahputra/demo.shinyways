@@ -1,3 +1,10 @@
+#' get_visual 
+#'
+#' @description A utils function
+#'
+#' @return The return value, if any, from executing the utility.
+#'
+#' @noRd
 #' @importFrom highcharter hchart hcaes
 get_visual <- function(.data) {
   res <- 

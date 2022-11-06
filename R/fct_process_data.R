@@ -1,3 +1,10 @@
+#' process_data 
+#'
+#' @description A fct function
+#'
+#' @return The return value, if any, from executing the function.
+#'
+#' @noRd
 #' @importFrom dplyr mutate across filter
 #' @importFrom tidyselect where
 #' @importFrom stats na.omit
