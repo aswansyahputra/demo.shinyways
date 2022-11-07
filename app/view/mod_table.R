@@ -1,11 +1,21 @@
-mod_table_ui <- function(id) {
+box::use(
+  shiny[NS, tagList, moduleServer, reactive, validate, need, tableOutput, renderTable],
+)
+
+box::use(
+  app/logic/get_summary[get_summary]
+)
+
+#' @export
+ui <- function(id) {
   ns <- NS(id)
   tagList(
     tableOutput(ns("display_table"))
   )
 }
 
-mod_table_server <- function(id, .data) {
+#' @export
+server <- function(id, .data) {
   moduleServer(
     id, function(input, output, session) {
       

@@ -1,4 +1,13 @@
-mod_selector_ui <- function(id) {
+box::use(
+  shiny[NS, tagList, checkboxGroupInput, actionButton, moduleServer, eventReactive],
+)
+
+box::use(
+  app/logic/process_data[process_data]
+)
+
+#' @export
+ui <- function(id) {
   ns <- NS(id)
   tagList(
     checkboxGroupInput(ns("sex"), label = "Must pick one or both:", choices = c("female", "male")),
@@ -6,7 +15,8 @@ mod_selector_ui <- function(id) {
   )
 }
 
-mod_selector_server <- function(id, .data) {
+#' @export
+server <- function(id, .data) {
   moduleServer(
     id, function(input, output, session) {
       res <- eventReactive(input$apply, {

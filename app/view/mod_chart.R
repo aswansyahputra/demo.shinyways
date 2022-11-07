@@ -1,11 +1,22 @@
-mod_chart_ui <- function(id) {
+box::use(
+  shiny[NS, tagList, moduleServer, reactive, validate, need],
+  highcharter[highchartOutput, renderHighchart]
+)
+
+box::use(
+  app/logic/get_visual[get_visual]
+)
+
+#' @export
+ui <- function(id) {
   ns <- NS(id)
   tagList(
     highchartOutput(ns("display_chart"))
   )
 }
 
-mod_chart_server <- function(id, .data) {
+#' @export
+server <- function(id, .data) {
   moduleServer(
     id, function(input, output, session) {
       
